@@ -867,20 +867,19 @@ section.container {
 }
 .timeline-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .timeline-title {
   font-size: 2rem;
-  font-weight: 700;
-  color: #0071c5; /* Intel blue */
+  color: #000000; /* Intel blue */
   margin-bottom: 0.5rem;
 }
 
 .timeline-subtitle {
   font-size: 1rem;
   font-weight: 400;
-  color: #005fa3; /* Darker blue or a subtle shade */
+  color: #000000; /* Darker blue or a subtle shade */
   opacity: 0.7;
 }
 
