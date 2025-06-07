@@ -763,3 +763,30 @@ section.container {
   background-color: #00c527b6;
   color: #ffffff;
 }
+.subscription-section {
+  background-color: #f0fdf4;
+  color: #2e7d32;
+  border-top: 1px solid #d6e9c6;
+  border-bottom: 1px solid #d6e9c6;
+}
+
+.subscription-form input[type="email"] {
+  max-width: 300px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #c8e6c9;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+.subscription-form .btn-primary-green {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.subscription-form .btn-primary-green:hover {
+  background-color: #388e3c;
+}
