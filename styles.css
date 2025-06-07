@@ -721,8 +721,8 @@ section.container {
 
 /* Card Styling */
 .sustainability-card {
-  background-color: #d7ffda;
-  border: 1px solid #c4e3cd;
+  background-color: #f0fdf4;
+  border: 1px solid #f0fdf4;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -791,7 +791,7 @@ section.container {
   background-color: #388e3c;
 }
 .subscription-section {
-  background-image: url('img/branch.jpg'); /* Adjust to your image path */
+  background-image: url('img/green.jpg'); /* Adjust to your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
