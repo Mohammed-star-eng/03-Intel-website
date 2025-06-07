@@ -663,3 +663,54 @@ html, body {
 .card:focus-within {
   transform: translateY(-8px) scale(1.03);
 }
+/* Section Container Spacing */
+section.container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Card Styling */
+.feature-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  height: 100%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Card Hover Effect */
+.feature-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+/* Icon Styling */
+.feature-icon {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: #198754; /* Bootstrap's green */
+}
+
+/* Heading Styling */
+.feature-card h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Paragraph Text */
+.feature-card p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Button Consistency */
+.feature-card .btn {
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+}
