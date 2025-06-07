@@ -716,12 +716,12 @@ section.container {
 }
 /* Section Background */
 .sustainability-section {
-  background-color: #eaf3fa;
+  background-color: #eaf3fae4;
 }
 
 /* Card Styling */
 .sustainability-card {
-  background-color: #ffffffdb;
+  background-color: #ffffffc3;
   border: 1px solid #dee2e6e4;
   padding: 2rem;
   border-radius: 1rem;
@@ -761,5 +761,5 @@ section.container {
 
 .btn-outline-primary-blue:hover {
   background-color: #0071c5;
-  color: #2e90e5;
+  color: #ffffff;
 }
