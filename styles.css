@@ -731,8 +731,8 @@ section.container {
 
 /* Sustainability Card Styling */
 .sustainability-card {
-  background-color: #ffffff;
-  border: 1px solid #0071c5;
+  background-color: #f0f5fa; /* Softer light blue */
+  border: 1px solid #3393ff; /* lighter blue border */
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -758,7 +758,6 @@ section.container {
 .sustainability-card h4 {
   color: #003d6a;
   margin-bottom: 1rem;
-  font-weight: bold;
 }
 
 /* Button Variant */
