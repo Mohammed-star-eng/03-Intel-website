@@ -669,10 +669,10 @@ section.container {
   padding-bottom: 3rem;
 }
 
-/* Card Styling */
+/* Feature Card Styling */
 .feature-card {
   background-color: #ffffff;
-  border: 1px solid #dee2e6;
+  border: 1px solid #cfd8dc; /* Light gray border */
   border-radius: 0.75rem;
   padding: 2rem;
   height: 100%;
@@ -685,44 +685,54 @@ section.container {
   transform: translateY(-5px);
 }
 
-/* Icon Styling */
+/* Feature Card Icon */
 .feature-icon {
   font-size: 1.5rem;
   vertical-align: middle;
   margin-right: 0.5rem;
-  color: #198754; /* Bootstrap's green */
+  color: #0071c5; /* Intel Blue */
 }
 
-/* Heading Styling */
+/* Card Heading */
 .feature-card h4 {
   font-weight: 600;
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #003d6a; /* Deep Intel Blue */
 }
 
 /* Paragraph Text */
 .feature-card p {
-  color: #555;
+  color: #4d4d4d;
   margin-bottom: 1.5rem;
 }
 
-/* Button Consistency */
+/* Card Button */
 .feature-card .btn {
   font-weight: 500;
   padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
-}
-/* Section Background */
-.sustainability-section {
-  background-color: #eaf3fae4;
+  background-color: #0071c5;
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-/* Card Styling */
+.feature-card .btn:hover {
+  background-color: #005fa3;
+}
+
+/* Section Background */
+.sustainability-section {
+  background-color: #eaf3fae4; /* Soft Intel Light Blue */
+}
+
+/* Sustainability Card Styling */
 .sustainability-card {
-  background-color: #f7fff9e0;
-  border: 1px solid #43a047;
+  background-color: #ffffff;
+  border: 1px solid #0071c5;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -736,7 +746,7 @@ section.container {
   transform: translateY(-3px);
 }
 
-/* Icon Styling */
+/* Sustainability Icon */
 .sustainability-card .icon {
   color: #0071c5;
   font-size: 2rem;
@@ -744,42 +754,45 @@ section.container {
   vertical-align: middle;
 }
 
-/* Heading Style */
+/* Sustainability Heading */
 .sustainability-card h4 {
   color: #003d6a;
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-/* Button Style */
+/* Button Variant */
 .btn-outline-primary-blue {
-  color: #388e3c;
+  color: #0071c5;
   border: 1px solid #0071c5;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .btn-outline-primary-blue:hover {
-  background-color: #00c527b6;
+  background-color: #0071c5;
   color: #ffffff;
 }
+
+/* Subscription Section */
 .subscription-section {
-  background-color: #f0fdf4;
-  color: #2e7d32;
-  border-top: 1px solid #d6e9c6;
-  border-bottom: 1px solid #d6e9c6;
+  background-color: #f0f7fa;
+  color: #003d6a;
+  border-top: 1px solid #cfd8dc;
+  border-bottom: 1px solid #cfd8dc;
 }
 
+/* Subscription Form */
 .subscription-form input[type="email"] {
   max-width: 300px;
   padding: 0.75rem 1rem;
-  border: 1px solid #c8e6c9;
+  border: 1px solid #b0bec5;
   border-radius: 0.5rem;
   outline: none;
 }
 
 .subscription-form .btn-primary-green {
-  background-color: #43a047;
+  background-color: #0071c5;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -789,8 +802,9 @@ section.container {
 }
 
 .subscription-form .btn-primary-green:hover {
-  background-color: #388e3c;
-  color: white;
+  background-color: #005fa3;
+}
+
 }
 .subscription-section {
   background-image: url('img/green.jpg'); /* Adjust to your image path */
