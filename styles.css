@@ -805,7 +805,15 @@ section.container {
   background-color: #005fa3;
 }
 
+.subscription-section {
+  position: relative; /* Needed for ::after to position absolutely inside */
+  background-color: #f0fdf4;
+  color: #2e7d32;
+  border-top: 1px solid #d6e9c6;
+  border-bottom: 1px solid #d6e9c6;
+  overflow: hidden; /* Prevents ::after from spilling out */
 }
+
 .subscription-section::after {
   content: '';
   position: absolute;
@@ -818,12 +826,21 @@ section.container {
   opacity: 0.03;
   animation: moveBackground 20s linear infinite;
   pointer-events: none;
+  z-index: 0; /* Ensures it stays behind content */
 }
 
+/* Move the animation */
 @keyframes moveBackground {
   from { transform: translateX(0); }
   to { transform: translateX(-30px); }
 }
+
+/* Optional: Raise the content above ::after */
+.subscription-section > * {
+  position: relative;
+  z-index: 1;
+}
+
 
 .video-wrapper {
   position: relative;
