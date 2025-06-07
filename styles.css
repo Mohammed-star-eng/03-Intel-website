@@ -1,0 +1,665 @@
+/* Intel Sustainability Journey - Professional Theme */
+
+:root {
+  --intel-blue: #0071c5; /* Refined Intel Blue for smoother, authentic flow */
+  --intel-blue-soft: #1c75bc;
+  --sustain-green: #2e8b57;
+  --light-sky: #e6f3f9;
+  --bright-green: #6fbf73;
+  --highlight-yellow: #ffd700;
+  --text-color: #1a1a1a;
+  --white: #ffffff;
+  --bg-gradient: var(--intel-blue);
+  --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--light-sky);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-top: 72px; /* Adjust to match navbar height (approx) */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* === Navbar === */
+.navbar {
+  background: linear-gradient(
+    to right,
+    #f5f5f5d3 0 145px,      /* Light gray for the logo area (adjust 120px as needed) */
+    var(--intel-blue) 120px 100%
+  );
+  padding: 0.8rem 1.6rem; /* Restore desktop padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  min-height: 72px; /* Ensure consistent height for offset */
+  box-sizing: border-box; /* Ensure padding does not cause overflow */
+}
+
+.nav-logo {
+  width: 100px;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.75));
+  transition: filter var(--transition-speed) ease;
+}
+
+.nav-logo:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: 
+    color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links li a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: var(--highlight-yellow);
+  transition: width var(--transition-speed) ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: var(--highlight-yellow);
+}
+
+.nav-links li a:hover::after,
+.nav-links li a:focus::after {
+  width: 100%;
+}
+
+/* === Hero Section === */
+.hero {
+  position: relative;
+  min-height: 70vh; /* Slightly smaller than full but larger than before */
+  padding: 5rem 2rem 5rem;
+  text-align: center;
+  background: url('img/green_computing.avif') no-repeat center/cover;
+  color: var(--white);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 0;
+  background-color: var(--intel-blue);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 113, 197, 0.85);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero .logo {
+  position: relative;
+  width: 200px;
+  margin-bottom: 0.7rem;
+  z-index: 1;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+  color: #f2f2f2ed; /* Changed from var(--white) to light gray */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-size: 1.4rem;
+  color: #e0e0e0f1; /* Changed from var(--white) to light gray */
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  margin: 0 auto 0.5rem auto; /* Reduced bottom margin */
+}
+
+/* === Timeline Section === */
+.timeline-container {
+  background: #f4f9fcdd;
+  padding: 4rem 2rem 6rem;
+  overflow-x: auto;
+  position: relative;
+}
+
+.timeline-container::before,
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.timeline-container::before {
+  left: 0;
+  background: linear-gradient(to right, #f4f9fc 0%, transparent 100%);
+}
+
+.timeline-container::after {
+  right: 0;
+  background: linear-gradient(to left, #f4f9fc 0%, transparent 100%);
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: flex-start; /* Align cards to the left so first card is visible */
+  overflow-x: auto; /* Allow horizontal scroll for cards */
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.timeline::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.milestone {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 180px;             /* Decrease card width */
+  transition: box-shadow 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+
+/* Highlight the card when it's centered (active) */
+.milestone.active .card {
+  box-shadow: 0 0 0 4px var(--highlight-yellow), 0 12px 28px rgba(13, 122, 205, 0.333);
+  transform: scale(1.04);
+  z-index: 2;
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+
+/* Combine active and hover/focus for additive transform */
+.milestone.active .card:hover,
+.milestone.active .card:focus-within {
+  transform: translateY(-8px) scale(1.07); /* 1.04 * 1.03 ≈ 1.07 */
+}
+
+.card {
+  background: var(--light-sky);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 113, 197, 0.1);
+  overflow: hidden;
+  transition: 
+    transform var(--transition-speed) cubic-bezier(0.4,0,0.2,1), 
+    box-shadow var(--transition-speed) cubic-bezier(0.4,0,0.2,1);
+  cursor: default;
+  position: relative; /* Needed for overlay */
+}
+
+/* Add overlay for image darkening */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 260px; /* Increase card/image/overlay height */
+  background: rgba(0, 113, 197, 1); /* Subtle by default */
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+.card:hover::before,
+.card:focus-within::before {
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  height: 260px; /* Increase card/image/overlay height */
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  position: relative;
+  z-index: 0;
+}
+
+.card-content {
+  padding: 1.75rem 1.5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Move .details overlay to be a direct child of .card and cover the whole card */
+.details {
+  margin-top: 0;
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 50, 80, 0.92); /* Slightly darker overlay */
+  color: #ffffffe7; /* Make text pure white for visibility */
+  z-index: 3; /* Above everything in .card */
+  padding: 2rem 1.5rem 2rem;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Center horizontally */
+  justify-content: center;  /* Center vertically */
+  text-align: center;
+  color: #fff; /* Use pure white for best contrast */
+  font-style: normal;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  transition: opacity 0.25s;
+  opacity: 0;
+  pointer-events: none;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.card:hover .details,
+.card:focus-within .details {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.details p {
+  margin: 0;
+  padding: 0.1rem 0; /* Reduce vertical padding */
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.details p:first-child {
+  align-self: flex-start;
+  margin-bottom: 0.1rem; /* Small gap below first paragraph */
+  padding-top: 0.1rem;
+}
+
+.details p:last-child {
+  align-self: flex-end;
+  margin-top: 0.1rem; /* Small gap above last paragraph */
+  padding-bottom: 0.1rem;
+}
+
+/* === Footer === */
+footer.footer {
+  background: var(--intel-blue);
+  padding: 1rem 2rem;
+  color: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  border-radius: 0;
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.15);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed) ease;
+}
+
+.footer-links li a:hover,
+.footer-links li a:focus {
+  color: var(--highlight-yellow);
+  outline: none;
+}
+
+/* === Scroll Snap Container === */
+.scroll-container {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+}
+
+.snap-child {
+  scroll-snap-align: start;
+  flex: 0 0 300px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  body {
+    margin-top: 90px; /* Increase if navbar is taller on mobile */
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem; /* Only increase padding on mobile */
+    min-height: 90px; /* Match margin-top above */
+    text-align: center;
+    /* Override background for mobile: light gray at top, blue below */
+    background: linear-gradient(
+      to bottom,
+      #f5f5f5d3 0 60px,      /* Light gray for the top bar (height ~logo) */
+      var(--intel-blue) 60px 100%
+    );
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero {
+    margin-top: 90px; /* Add space below fixed navbar on mobile */
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+    margin: 0 auto 0.3rem auto; /* Reduced bottom margin for mobile */
+  }
+
+  .timeline-container {
+    overflow-x: unset; /* Make sure no horizontal scrollbar here */
+    overflow-y: unset;
+  }
+  .timeline {
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+    gap: 2rem;
+    overflow-x: unset;
+    overflow-y: auto; /* Only vertical scroll on mobile */
+    align-items: center; /* Center cards horizontally */
+  }
+
+  .milestone,
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    min-width: 220px;
+    height: 400px;
+    max-height: 400px;
+    min-height: 400px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  footer.footer {
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .timeline-container::before,
+  .timeline-container::after {
+    display: none;
+  }
+
+  .milestone,
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    min-width: 220px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nav-logo {
+    margin-top: -8px; /* Move logo slightly higher on mobile */
+  }
+}
+
+@media (min-width: 769px) {
+  .timeline-container {
+    max-width: calc(4 * 300px + 3 * 2.5rem);
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+}
+
+/* === Timeline Scroll Snap Enhancement === */
+.timeline {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  display: flex;
+  gap: 2.5rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--intel-blue) #e6f3f9;
+}
+
+.milestone {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 300px;
+  transition: box-shadow 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1);
+  position: relative;
+}
+
+/* Highlight the card when it's centered (active) */
+.milestone.active .card {
+  box-shadow: 0 0 0 4px var(--highlight-yellow), 0 12px 28px rgba(0, 113, 197, 0.25);
+  transform: scale(1.04);
+  z-index: 2;
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+
+/* Custom scrollbar for timeline */
+.timeline::-webkit-scrollbar {
+  height: 48px; /* Increased from 32px to 48px */
+}
+.timeline::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--intel-blue) 60%, var(--highlight-yellow) 100%);
+  border-radius: 6px;
+}
+.timeline::-webkit-scrollbar-track {
+  background: #e6f3f9;
+  border-radius: 6px;
+}
+
+/* Animated indicator dots below timeline */
+.timeline-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2.5rem;   /* Increase space above dots */
+  height: 48px;          /* Increase height of the indicator bar */
+  align-items: center;
+}
+.timeline-indicators .dot {
+  width: 18px;           /* Make dots bigger if you want */
+  height: 18px;
+}
+
+/* Responsive: keep snapping vertical on mobile */
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center; /* Center cards horizontally */
+    scroll-snap-type: y mandatory;
+    gap: 2rem;
+    overflow-x: unset;
+    overflow-y: auto;
+  }
+
+  .milestone,
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    min-width: 220px;
+    height: 400px;
+    max-height: 400px;
+    min-height: 400px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 500px) {
+  .timeline-indicators {
+    gap: 0.25rem;
+  }
+  .timeline-indicators .dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  .timeline-indicators {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+/* --- Enhanced Scroll Snap Fixes --- */
+
+/* Ensure .timeline container fully utilizes scroll snapping */
+.timeline-container {
+  scroll-padding-left: 2rem;
+  scroll-padding-right: 2rem;
+}
+
+/* Prevent slight misalignment on snap due to flex gaps */
+.timeline {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 1rem; /* Add padding to align edge elements cleanly */
+  padding-inline: 1rem; /* Match scroll-padding for visual consistency */
+}
+
+/* Improve snap precision and cross-browser compatibility */
+.milestone {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+/* On mobile, enhance vertical snapping consistency */
+@media (max-width: 768px) {
+  .timeline {
+    scroll-snap-type: y mandatory;
+    scroll-padding: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .milestone {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+
+/* Set a fixed width and height for all cards and milestones */
+.milestone,
+.card {
+  width: 300px;
+  height: 400px;
+  max-width: 300px;
+  min-width: 300px;
+  max-height: 400px;
+  min-height: 400px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure images and overlays fit the card */
+.card img,
+.card::before {
+  width: 100%;
+  height: 200px; /* Adjust as needed for your design */
+  object-fit: cover;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+}
+
+/* On mobile, keep the same size and center the cards */
+@media (max-width: 768px) {
+  .milestone,
+  .card {
+    width: 90vw;
+    max-width: 320px;
+    min-width: 220px;
+    height: 400px;
+    max-height: 400px;
+    min-height: 400px;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px) scale(1.03);
+}
