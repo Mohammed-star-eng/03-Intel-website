@@ -806,12 +806,12 @@ section.container {
 }
 
 .subscription-section {
-  position: relative; /* Needed for ::after to position absolutely inside */
-  background-color: #f0fdf4;
-  color: #2e7d32;
-  border-top: 1px solid #d6e9c6;
-  border-bottom: 1px solid #d6e9c6;
-  overflow: hidden; /* Prevents ::after from spilling out */
+  position: relative;
+  background-color: #f4f9fd; /* Light blueish-gray, Intel-like */
+  color: #003d6a; /* Deep Intel blue for text */
+  border-top: 1px solid #c9d9e9;
+  border-bottom: 1px solid #c9d9e9;
+  overflow: hidden;
 }
 
 .subscription-section::after {
@@ -821,25 +821,29 @@ section.container {
   left: 0;
   width: 200%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, #0071c5 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.03;
-  animation: moveBackground 20s linear infinite;
+  background-image: radial-gradient(circle, #0071c5 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.06;
+  animation: moveBackground 40s linear infinite;
   pointer-events: none;
-  z-index: 0; /* Ensures it stays behind content */
+  z-index: 0;
 }
 
-/* Move the animation */
 @keyframes moveBackground {
-  from { transform: translateX(0); }
-  to { transform: translateX(-30px); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-60px);
+  }
 }
 
-/* Optional: Raise the content above ::after */
+/* Ensure content stays above the pattern */
 .subscription-section > * {
   position: relative;
   z-index: 1;
 }
+
 
 
 .video-wrapper {
