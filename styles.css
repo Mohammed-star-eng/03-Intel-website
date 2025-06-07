@@ -833,4 +833,16 @@ section.container {
   height: 100%;
   border: none;
 }
+@media (min-width: 769px) {
+  /* Target all sections with class container except subscription-section */
+  section.container:not(.subscription-section) {
+    max-width: 900px; /* adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* If you have other wrappers besides sections, you can add similar rules */
+}
 
