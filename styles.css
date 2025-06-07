@@ -721,7 +721,7 @@ section.container {
 
 /* Card Styling */
 .sustainability-card {
-  background-color: #ffffff;
+  background-color: #ffffffea;
   border: 1px solid #dee2e6;
   padding: 2rem;
   border-radius: 1rem;
@@ -761,5 +761,5 @@ section.container {
 
 .btn-outline-primary-blue:hover {
   background-color: #0071c5;
-  color: #ffffff;
+  color: #2e90e5;
 }
