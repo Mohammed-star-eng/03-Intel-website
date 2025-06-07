@@ -776,10 +776,43 @@ section.container {
 
 /* Subscription Section */
 .subscription-section {
-  background-color: #f0f7fa;
-  color: #003d6a;
-  border-top: 1px solid #cfd8dc;
-  border-bottom: 1px solid #cfd8dc;
+  position: relative;
+  background-color: #f4f9fd; /* Intel light background */
+  color: #003d6a; /* Intel dark blue text */
+  border-top: 1px solid #c9d9e9;
+  border-bottom: 1px solid #c9d9e9;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Circuit Pattern Overlay */
+.subscription-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" fill="none" stroke="%230071c5" stroke-width="1"><rect x="10" y="10" width="180" height="180" rx="15" ry="15"/><circle cx="50" cy="50" r="5" fill="%230071c5"/><circle cx="150" cy="50" r="5" fill="%230071c5"/><circle cx="50" cy="150" r="5" fill="%230071c5"/><circle cx="150" cy="150" r="5" fill="%230071c5"/><path d="M50 50 L150 50 M50 150 L150 150 M50 50 L50 150 M150 50 L150 150" /><path d="M50 100 L100 100 L100 150" /><path d="M150 100 L100 100 L100 50" /></svg>');
+  background-repeat: repeat;
+  opacity: 0.05;
+  animation: moveCircuit 30s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Circuit Animation */
+@keyframes moveCircuit {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* Make sure content is above the pattern */
+.subscription-section > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Subscription Form */
@@ -804,47 +837,6 @@ section.container {
 .subscription-form .btn-primary-green:hover {
   background-color: #005fa3;
 }
-
-.subscription-section {
-  position: relative;
-  background-color: #f4f9fd; /* Light blueish-gray, Intel-like */
-  color: #003d6a; /* Deep Intel blue for text */
-  border-top: 1px solid #c9d9e9;
-  border-bottom: 1px solid #c9d9e9;
-  overflow: hidden;
-}
-
-.subscription-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background-image: radial-gradient(circle, #0071c5 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.06;
-  animation: moveBackground 40s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes moveBackground {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-60px);
-  }
-}
-
-/* Ensure content stays above the pattern */
-.subscription-section > * {
-  position: relative;
-  z-index: 1;
-}
-
-
 
 .video-wrapper {
   position: relative;
