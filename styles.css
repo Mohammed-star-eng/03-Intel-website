@@ -779,7 +779,6 @@ section.container {
   position: relative;
   background-color: #f4f9fd; /* Intel light background */
   color: #003d6a; /* Intel dark blue text */
-  border-top: 1px solid #c9d9e9;
   border-bottom: 1px solid #c9d9e9;
   overflow: hidden;
   z-index: 0;
