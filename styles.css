@@ -166,7 +166,7 @@ html {
 /* === Timeline Section === */
 .timeline-container {
   background: #f4f9fcdd;
-  padding: 2rem 2rem 6rem;
+  padding: 3rem 2rem 6rem;
   overflow-x: auto;
   position: relative;
 }
