@@ -822,29 +822,31 @@ section.container {
 /* Subscription Form Wrapper */
 .subscription-form {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1rem;
-  justify-content: center;
   align-items: center;
-  max-width: 600px;
+  justify-content: center;
+  max-width: 500px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* Email Input */
 .subscription-form input[type="email"] {
   width: 100%;
-  max-width: 100%;
+  max-width: 400px;
   padding: 0.75rem 1rem;
   border: 1px solid #b0bec5;
   border-radius: 0.5rem;
   outline: none;
   box-sizing: border-box;
+  text-align: left;
 }
 
 /* Subscribe Button */
 .subscription-form .btn-primary-green {
   width: 100%;
-  max-width: 100%;
+  max-width: 200px;
   background-color: #0071c5;
   color: white;
   border: none;
@@ -852,30 +854,27 @@ section.container {
   border-radius: 0.5rem;
   font-weight: bold;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-sizing: border-box;
 }
 
 .subscription-form .btn-primary-green:hover {
   background-color: #005fa3;
 }
 
-/* Larger screen behavior */
-@media (min-width: 600px) {
+/* Tablet and Up: Email & Button Side-by-Side */
+@media (min-width: 640px) {
   .subscription-form {
-    flex-wrap: nowrap;
+    flex-direction: row;
   }
 
   .subscription-form input[type="email"] {
     flex: 1;
-    width: auto;
-    max-width: 300px;
   }
 
   .subscription-form .btn-primary-green {
     width: auto;
-    white-space: nowrap;
   }
 }
+
 
 .video-wrapper {
   position: relative;
