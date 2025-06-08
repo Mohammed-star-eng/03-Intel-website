@@ -443,7 +443,7 @@ footer.footer {
     height: 400px;
     max-height: 400px;
     min-height: 400px;
-    margin-left: 0;
+    margin-inline-start: 0;
     margin-right: 0;
   }
 
@@ -468,7 +468,7 @@ footer.footer {
     width: 90vw;
     max-width: 320px;
     min-width: 220px;
-    margin-left: 0;
+    margin-inline-start: 0;
     margin-right: 0;
   }
 
@@ -559,7 +559,7 @@ footer.footer {
     height: 400px;
     max-height: 400px;
     min-height: 400px;
-    margin-left: 0;
+    margin-inline-start: 0;
     margin-right: 0;
   }
 }
@@ -840,7 +840,7 @@ section.container {
   border-radius: 0.5rem;
   outline: none;
   box-sizing: border-box;
-  text-align: left;
+  text-align: start;
 }
 
 /* Subscribe Button */
