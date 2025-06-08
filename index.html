@@ -314,12 +314,12 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const html = document.documentElement;
-      const rtlLangs = ['ar', 'he', 'fa', 'ur']; // Add more RTL language codes here
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
 
-      const lang = html.getAttribute('lang') || navigator.language || 'en';
-      const baseLang = lang.split('-')[0];
+    function updateDirection() {
+      const html = document.documentElement;
+      const langAttr = html.getAttribute('lang') || navigator.language || 'en';
+      const baseLang = langAttr.split('-')[0];
 
       if (rtlLangs.includes(baseLang)) {
         html.setAttribute('dir', 'rtl');
@@ -328,8 +328,18 @@
         html.setAttribute('dir', 'ltr');
         html.classList.remove('rtl');
       }
+    }
+
+    document.addEventListener('DOMContentLoaded', updateDirection);
+
+  // Optional: Watch for changes in <html lang> (in case a translator modifies it later)
+    const observer = new MutationObserver(() => {
+      updateDirection();
     });
+
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
   </script>
+
 
 </body>
 </html>
